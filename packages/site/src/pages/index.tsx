@@ -102,12 +102,12 @@ const ErrorMessage = styled.div`
 
 const Index = () => {
   const { error } = useMetaMaskContext();
-  const { isFlask, snapsDetected, installedSnap } = useMetaMask();
+  const { isFlask, snapsDetected, installedSnap, noFlask } = useMetaMask();
   const requestSnap = useRequestSnap();
   const invokeSnap = useInvokeSnap();
 
   const isMetaMaskReady = isLocalSnap(defaultSnapOrigin)
-    ? isFlask
+    ? noFlask || isFlask
     : snapsDetected;
 
   const handleSendHelloClick = async () => {
@@ -122,6 +122,13 @@ const Index = () => {
       <Subtitle>
         Get started by editing <code>src/index.tsx</code>, this is v1
       </Subtitle>
+      <div>
+        <br />
+        {`no flask ${noFlask ? 'true' : 'false'}`}
+        <br />
+        {`is meta mask ready ${isMetaMaskReady ? 'true' : 'false'}`}
+        <br />
+      </div>
       <CardContainer>
         {error && (
           <ErrorMessage>

@@ -15,6 +15,9 @@ export const useMetaMask = () => {
 
   const [isFlask, setIsFlask] = useState(false);
 
+  // eslint-disable-next-line no-restricted-globals
+  const noFlask = process.env.REACT_APP_NO_FLASK === 'true';
+
   const snapsDetected = provider !== null;
 
   /**
@@ -52,5 +55,5 @@ export const useMetaMask = () => {
     detect().catch(console.error);
   }, [provider]);
 
-  return { isFlask, snapsDetected, installedSnap, getSnap };
+  return { isFlask, noFlask, snapsDetected, installedSnap, getSnap };
 };

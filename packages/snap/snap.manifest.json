@@ -1,5 +1,5 @@
 {
-  "version": "0.7.0",
+  "version": "0.9.0",
   "description": "A snap to improve Native ZKEVM transactions on metamask.",
   "proposedName": "ZK Native Extension",
   "repository": {
@@ -7,7 +7,7 @@
     "url": "https://github.com/Morgosh/ZKsnap"
   },
   "source": {
-    "shasum": "iGqWKZpC31V6R5NWT4n1EFq4Cw6ndu5QX9/KutbxAQQ=",
+    "shasum": "u/8sdLSB6GJ2L8DlegRnL5Ow6P0fs/PaWawI9kaGsSg=",
     "location": {
       "npm": {
         "filePath": "dist/bundle.js",
@@ -19,10 +19,6 @@
   },
   "initialPermissions": {
     "snap_dialog": {},
-    "endowment:rpc": {
-      "dapps": true,
-      "snaps": false
-    },
     "endowment:signature-insight": {
       "allowSignatureOrigin": true
     }

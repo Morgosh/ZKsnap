@@ -73,7 +73,7 @@ const ConnectedIndicator = styled.div`
 export const InstallFlaskButton = () => (
   <Link href="https://metamask.io/flask/" target="_blank">
     <FlaskFox />
-    <ButtonText>Install MetaMask Flask</ButtonText>
+    <ButtonText>Install MetaMask Flask2</ButtonText>
   </Link>
 );
 
@@ -101,9 +101,10 @@ export const SendHelloButton = (props: ComponentProps<typeof Button>) => {
 
 export const HeaderButtons = () => {
   const requestSnap = useRequestSnap();
-  const { isFlask, installedSnap } = useMetaMask();
+  const { isFlask, noFlask, installedSnap } = useMetaMask();
 
-  if (!isFlask && !installedSnap) {
+  if (!noFlask && !isFlask && !installedSnap) {
+    console.log('noFlask', noFlask);
     return <InstallFlaskButton />;
   }
 
