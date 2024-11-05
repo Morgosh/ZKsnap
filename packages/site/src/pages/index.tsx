@@ -117,18 +117,19 @@ const Index = () => {
   return (
     <Container>
       <Heading>
-        Welcome to <Span>template-snap</Span>
+        Welcome to <Span>ZK Native Extension</Span>
       </Heading>
       <Subtitle>
-        Get started by editing <code>src/index.tsx</code>, this is v1
+        This snap will provide useful information when signing native
+        transactions
       </Subtitle>
-      <div>
+      {/* <div>
         <br />
         {`no flask ${noFlask ? 'true' : 'false'}`}
         <br />
         {`is meta mask ready ${isMetaMaskReady ? 'true' : 'false'}`}
         <br />
-      </div>
+      </div> */}
       <CardContainer>
         {error && (
           <ErrorMessage>
@@ -178,7 +179,7 @@ const Index = () => {
             disabled={!installedSnap}
           />
         )}
-        <Card
+        {/* <Card
           content={{
             title: 'Send Hello message',
             description:
@@ -196,14 +197,9 @@ const Index = () => {
             Boolean(installedSnap) &&
             !shouldDisplayReconnectButton(installedSnap)
           }
-        />
+        /> */}
         <Notice>
-          <p>
-            Please note that the <b>snap.manifest.json</b> and{' '}
-            <b>package.json</b> must be located in the server root directory and
-            the bundle must be hosted at the location specified by the location
-            field.
-          </p>
+          <p>Please note that the snap is still in early development</p>
         </Notice>
       </CardContainer>
     </Container>
